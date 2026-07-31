@@ -1,0 +1,90 @@
+/* Global */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 2fr 9fr;
+}
+
+.grid-container > * {
+  /* XXX: just for setting up */
+  border: black solid 1px;
+}
+
+button {
+  /* remove all defaults for buttons */
+  background: none;
+  border: none;
+}
+
+/* Header */
+
+header {
+  /* from ancestor */
+  grid-column: 2 / 7;
+  grid-row: 1 / 2;
+  /* from self */
+  display: grid;
+  grid-template-columns: 5fr 1fr 2fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  padding: 1rem;
+}
+
+header > .left-header {
+  /* from ancestor */
+  grid-column: 1 / 2;
+  align-items: center;
+  width: 100%;
+  /* from self */
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+}
+
+.left-header > img {
+  justify-self: center;
+}
+
+.left-header > form {
+  justify-self: stretch;
+}
+
+.left-header > form > input {
+  width: 100%;
+}
+
+header > .right-header {
+  /* from ancestor */
+  grid-column: 3 / 4;
+  /* from self */
+  display: grid;
+  grid-template-columns: 1fr 1fr 2fr;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+}
+
+/* Navigation Bar */
+
+nav {
+  /* from ancestor */
+  grid-column: 2 / 7;
+  grid-row: 2 / 3;
+  /* from self */
+  display: grid;
+  grid-template-columns: 5fr 1fr 2fr;
+  grid-template-rows: repeat(2, 1fr);
+}
+
+/* Main Section */
+
+main {
+  grid-column: 2 / 7;
+  grid-row: 3 / 4;
+}
+
+.sidebar {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}
